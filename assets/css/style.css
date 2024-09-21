@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap");
+
+body {
+  background-image: url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTkxenYxZ3Z2b3B1bW1sbWN5MzZ1dXFmZ2F3ZHowcXg0dzdxMjJxNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/z2POQZ2t8s5Gzp4C7r/giphy.webp"); /* Caminho do GIF */
+  font-family: "Noto Serif JP", serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background-position: center; /* Centraliza o GIF */
+  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  background-attachment: fixed; /* Mantém o fundo fixo ao rolar a página */
+  background-size: cover; /* Faz com que o GIF cubra todo o body */
+}
+
+.card {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 660px;
+  width: 250px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  position: relative;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+.card-image-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+  border-radius: 8px;
+  transition: transform 0.5s ease;
+  transition: all 0.5s ease;
+  filter: grayscale(100%);
+  object-fit: cover;
+}
+.card:hover .card-image {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+.card-content {
+  padding: 20px;
+}
+h2 {
+  color: #4a4a4a;
+  margin-top: 0;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #e74c3c;
+  padding-bottom: 10px;
+}
+p {
+  color: #555353;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 500;
+  text-align: center;
+}
+.learn-more {
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.learn-more:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.938);
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.938);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 30px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-50px);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+.modal.show {
+  opacity: 1;
+}
+.modal.show .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.close:hover,
+.close:focus {
+  color: #e74c3c;
+  text-decoration: none;
+  cursor: pointer;
+}
+.skill-bar {
+  margin-top: 20px;
+}
+.skill-bar h4 {
+  margin-bottom: 5px;
+}
+.skill-bar .bar {
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.skill-bar .progress {
+  height: 100%;
+  background-color: #e74c3c;
+  width: 0;
+  transition: width 1s ease;
+}
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.gallery img {
+  width: 30%;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  object-fit: cover;
+  image-rendering: pixelated;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.966);
+  border-radius: 50%;
+
+  
+}
+.gallery img:hover {
+  transform: scale(1.1);
+}
+.facts {
+  margin-top: 20px;
+}
+.fact {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: #222;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 16px;
+  min-width: 30%; /* Garante que o footer ocupe 100% da largura */
+  border-top: 2px solid #444;
+  position: relative;
+  bottom: 0;
+  border-radius: 8px;
+}
+
+footer p {
+  margin: 5px 0; /* Margem entre os parágrafos */
+  color: #f1f1f1;
+}
+
+footer a {
+  color: #ff9800; /* Cor de destaque para o link */
+  text-decoration: none; /* Remove o sublinhado */
+  transition: color 0.3s ease; /* Suaviza a mudança de cor */
+}
+
+footer a:hover {
+  color: #ffa726; /* Muda a cor ao passar o mouse */
+}
+
+/* Responsivo: Ajusta o tamanho da fonte em telas menores */
+@media (max-width: 600px) {
+  footer {
+    font-size: 14px; /* Reduz o tamanho da fonte para telas pequenas */
+  }
+}
+
+@keyframes smoke {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(50px, -50px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50px, 50px);
+    opacity: 0.6;
+  }
+}
